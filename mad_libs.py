@@ -1,3 +1,25 @@
+# CS361 Project
+# Mad-Libs @ CLI
+# A command-line version of the story crafting game/puzzle known as Mad-Libs
+
+class MadLibs:
+    """    Represents a Mad Lib    """
+    def __init__(self, title, mad_topic, body):
+        self._title = title
+        self._mad_topic = mad_topic
+        self._body = body
+
+    def get_title(self):
+        """        Get method for title        """
+        return self._title
+
+    def get_topic(self):
+        """        Get method for topic        """
+        return self._mad_topic
+
+    def body(self):
+        """        Get method for body        """
+        return self._body
 
 
 # def main():
@@ -26,19 +48,23 @@ while True:
         intro = input("Enter: ")
         if intro == "1":
             start = "2"
-        else:
+        elif intro == "2":
             start = "3"
+        else:
+            start = "4"
 
     if start == "2":
-        topic = input('''
+        print('''
       	Pick a topic and we’ll get started crafting a Mad-Libs!
       o	1) History
       o	2) Science 
       o	3) Art
       o	4) etc...
         ''')
+        topic = input("Enter: ")
         if topic == "1":
-            print("1")
+            print("This is where I will use the mad-libs class and logic to allow the user to enter their responses"
+                  "and be able to backtrace if they want to change their responses")
         if topic == "2":
             print("2")
         if topic == "3":
@@ -48,8 +74,14 @@ while True:
         if topic == "5":
             print("5")
 
+    # End condition
     if start == "3":
         print('''
     Thanks for playing, we hope to see you again soon!
         ''')
         break
+
+    # Error checking
+    if start == "4":
+        print("Unrecognized command, please try again")
+
