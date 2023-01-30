@@ -1,6 +1,6 @@
 # CS361 Project
 # Mad-Libs @ CLI
-# A command-line version of the story crafting game/puzzle known as Mad-Libs
+# A command-line version of the story crafting game/puzzle known as Mad-Libs which are fun
 
 class MadLibs:
     """    Represents a Mad Lib    """
