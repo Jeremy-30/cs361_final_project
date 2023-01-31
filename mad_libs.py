@@ -1,6 +1,7 @@
 # CS361 Project
 # Mad-Libs @ CLI
 # A command-line version of the story crafting game/puzzle known as Mad-Libs which can be played solo or with a party
+# Semantic versioning and has the format MAJOR_VERSION.MINOR_VERSION.PATCH_VERSION
 
 class MadLibs:
     """    Represents a Mad Lib    """
