@@ -93,7 +93,7 @@ class MadLibs:
         """        take user input        """
         x = range(0, self._word_count)
         for n in x:
-            y = input(f"Enter choice {n + 1}: ")
+            y = input(f"Enter choice **[{n + 1}]**: ")
             self._user_input.append(y)
         return self._user_input
 
@@ -130,10 +130,10 @@ def main():
         ("The Magic Computers",
          8,
          '''
-    Today, every student has a computer small enough to fit into his **noun**. They can solve any math problem by simply
-    pushing the computer's little **plural noun**. Computers can add, multiply, divide, and **present tense verb**. 
-    They can also **present tense verb** better than a human. Some computers are **part of body (plural)**. Others have 
-    a/an **adjective** screen that shows all kinds of **plural noun** and **adjective** figures.
+    Today, every student has a computer small enough to fit into his **[noun]**. They can solve any math problem by 
+    simply pushing the computer's little **[plural noun]**. Computers can add, multiply, divide, and **[present tense  
+    verb]**. They can also **[present tense verb]** better than a human. Some computers are **[part of body (plural)]**.  
+    Others have a/an **[adjective]** screen that shows all kinds of **[plural noun]** and **[adjective]** figures.
     '''
          )
 
