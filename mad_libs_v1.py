@@ -3,15 +3,14 @@
 # A command-line version of the story crafting game/puzzle known as Mad-Libs which can be played solo or with a party
 # Semantic versioning and has the format MAJOR_VERSION.MINOR_VERSION.PATCH_VERSION
 
-class MadLibs:
+class MadLibsStruct:
     """    Represents a Mad Lib    """
 
-    def __init__(self, mad_topic, title, input_type_arr, get_input_count):
+    def __init__(self, mad_topic, title, input_type_arr):
         self._title = title
         self._mad_topic = mad_topic
         self._input_type_arr = input_type_arr
-        self._get_input_count = get_input_count
-        self._body = body
+        # self._user_input = []
 
     def get_topic(self):
         """        Get method for topic        """
@@ -24,30 +23,37 @@ class MadLibs:
     def get_input_count(self):
         """        Get method for number of possible user inputs        """
         # Make sure to match this exactly to the amount of possible inputs for the Mad-Lib!
-        return self._get_input_count
-
-    def input_type_arr(self, x):
-        """        Get method for body        """
-        return self._input_type_arr[x]
-
-    def get_user_input(self):
-        """        Get method for body        """
-        user_input = []
-        x = range(0, self.get_input_count())
-        for n in x:
-            y = input(f"Enter choice {n + 1}: ")
-            user_input.append(y)
-        return user_input
+        size = len(self._input_type_arr)
+        return size
 
 
-class MadLibsBody:
+
+    # def get_user_input(self):
+    #     """        Get method for body        """
+    #
+    #     x = range(0, self.get_input_count())
+    #     for n in x:
+    #         y = input(f"Enter choice {n + 1}: ")
+    #         self._user_input.append(y)
+    #     return self._user_input
+    #
+    # def return_user_input(self, x):
+    #     return self._user_input[x]
+
+
+class MadLibs(MadLibsStruct):
     """    Represents a Mad Lib Body   """
-    def __init__(self, body):
+    def __init__(self, mad_topic, title, input_type_arr, body):
+        super().__init__(mad_topic, title, input_type_arr)
         self._body = body
 
     def get_body(self):
         """        Get method for body        """
         return self._body
+
+    def input_type_arr(self, x):
+        """        Get method for body        """
+        return self._input_type_arr[x]
 
 
 def main():
@@ -55,15 +61,13 @@ def main():
                    "The Magic Computers",
                    ["noun", "plural noun", "p-tense verb", "p-tense verb", "part of body (plural)", "adjective",
                     "plural noun", "adjective"],
-                   8,
-                   )
-    mad1Body = MadLibsBody(
-        f"Today, every student has a computer small enough to fit into his **. They can solve any"
+                   f"Today, every student has a computer small enough to fit into his *{mad1.input_type_arr(0)}*. They can solve any"
                    # math problem by simply pushing the computer's little *{arr[1]}*. Computers can add,
                    # multiply, divide, and *{arr[2]}*. They can also ___present tense verb___ better than
                    # a human. Some computers are ___part of body (plural)___. Others have a/an ___adjective___ screen
                    # that shows all kinds of ___plural noun___ and ___adjective___ figures.
-    )
+                   )
+
 
     while True:
         print('''
@@ -111,25 +115,7 @@ def main():
             1:''', mad1.get_title())
                 choice = input("Enter: ")
                 if choice == "1":
-                    print(mad1.get_body())
-                    print(mad1.get_input_count())
-                    print(mad1.input_type_arr(5))
-
-                    print(mad1.get_user_input())
-
-                    # mad1_choice = input("Enter: ")
-                    # mad2_choice = input("Enter: ")
-                    # mad3_choice = input("Enter: ")
-                    # mad4_choice = input("Enter: ")
-                    # mad5_choice = input("Enter: ")
-                    # mad6_choice = input("Enter: ")
-                    # mad7_choice = input("Enter: ")
-                    # mad8_choice = input("Enter: ")
-                    # print(f"Today, every student has a computer small enough to fit into his {mad1_choice}. \n "
-                    #       f"They can solve any math problem by simply pushing the computer's little {mad2_choice}. \n"
-                    #       f"Computers can add, multiply, divide, and {mad3_choice}. They can also {mad4_choice} \n"
-                    #       f"better than a human. Some computers are {mad5_choice}. Others have a/an {mad6_choice} screen \n"
-                    #       f"that shows all kinds of {mad7_choice} and {mad8_choice} figures.\n")
+                    print(mad1body_start.get_body())
             if topic == "3":
                 print("3")
             if topic == "4":
