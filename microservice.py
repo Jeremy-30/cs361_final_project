@@ -16,9 +16,9 @@ def main():
         if read_line == "2":
             write_mad2 = open("story.txt", "w")
             print(f"Serving story: 2")
-            mad2 = "Pyramids~6~Pyramids are [adjective] tombs where Egyptians [past tense verb] their\n" \
+            mad2 = "Pyramids~7~Pyramids are [adjective] tombs where Egyptians [past tense verb] their\n" \
                    "kings and [adjective] families. Some of them are [whole number] years old, each\n" \
-                   "taking many [plural noun] to build. Each pyramid had [plural noun]  inside and\n" \
+                   "taking many [plural noun] to build. Each pyramid had [plural noun] inside and\n" \
                    "were decorated with [plural noun].\n"
             write_mad2.write(mad2)
             write_mad2.close()

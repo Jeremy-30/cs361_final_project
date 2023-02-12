@@ -216,10 +216,10 @@ def main():
                 story_select(mad2)
                 arr2 = mad2.return_user_input()
                 print(
-                    f"Pyramids are {arr2[0]} tombs where Egyptians {arr2[1]} their kings and\n"
-                    f"{arr2[1]} families. Some of them are {arr2[2]} years old, each taking many\n"
-                    f"{arr2[3]} to build. Each pyramid had {arr2[4]} inside and were decorated\n"
-                    f"with {arr2[5]}.\n"
+                    f"Pyramids are {arr2[0]} tombs where Egyptians {arr2[1]} their\n"
+                    f"kings and {arr2[2]} families. Some of them are {arr2[3]} years old, each\n"
+                    f"taking many {arr2[4]} to build. Each pyramid had {arr2[5]} inside and\n"
+                    f"were decorated with {arr2[6]}.\n"
                 )
                 if next_select():
                     break
