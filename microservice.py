@@ -15,7 +15,7 @@ def main():
 
         if read_line == "2":
             write_mad2 = open("story.txt", "w")
-            print(f"Serving the story: 2")
+            print(f"Serving story: 2")
             mad2 = "Pyramids~6~Pyramids are [adjective] tombs where Egyptians [past tense verb] their\n" \
                    "kings and [adjective] families. Some of them are [whole number] years old, each\n" \
                    "taking many [plural noun] to build. Each pyramid had [plural noun]  inside and\n" \
@@ -25,7 +25,7 @@ def main():
 
         if read_line == "3":
             write_mad3 = open("story.txt", "w")
-            print(f"Serving the story: 3")
+            print(f"Serving story: 3")
             mad3 = "Art Class~8~Today in Art Class we went outside to draw pictures of trees, flowers\n" \
                    "and [plural noun]. I decided to draw a [adjective] oak tree. First, I drew the trunk\n" \
                    "and then I added the [plural noun]. I colored the trunk [color] and the leaves\n" \

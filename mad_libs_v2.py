@@ -91,9 +91,9 @@ def microservice(mad):
     run_comm = open("comm_pipe.txt", "w")
     run_comm.write(f"{mad}")
     run_comm.close()
-    print("Connecting to microservice...")
+    print("Request sent to microservice...")
     time.sleep(10.0)
-    print(f"Connection complete. Mad-Lib {mad} Loaded!")
+    print(f"Data received. Mad-Lib {mad} Loaded!")
     contents = ""
     with open("story.txt", "r") as read_mad:
         line = read_mad.readline()
