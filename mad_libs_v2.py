@@ -56,6 +56,9 @@ def unrecognized():
 
 def story_select(x):
     """Function for selecting story"""
+    print()
+    print("Here is your Mad-Lib. Follow the order in which the brackets [] appear to input your words!")
+    print()
     print(x.get_body())
     x.user_input()
     print()
@@ -66,8 +69,8 @@ def story_select(x):
 def next_select():
     """Function for selecting next story"""
     print(
-        'If you would like to try again, enter "1". Enter "2" if you want to select another story. '
-        'To exit, enter "3".')
+        'If you would like to try the same Mad-Lib again, enter "1". Enter "2" if you want to select\n'
+        'another story. To exit, enter "3".')
     print()
     while True:
         next_step = input("Enter: ")
@@ -88,9 +91,9 @@ def microservice(mad):
     run_comm = open("comm_pipe.txt", "w")
     run_comm.write(f"{mad}")
     run_comm.close()
-
-    time.sleep(15.0)
-
+    print("Connecting to microservice...")
+    time.sleep(10.0)
+    print(f"Connection complete. Mad-Lib {mad} Loaded!")
     contents = ""
     with open("story.txt", "r") as read_mad:
         line = read_mad.readline()
@@ -109,6 +112,7 @@ def microservice(mad):
 
 class MadLibs:
     """Represents a Mad Lib"""
+
     def __init__(self, title, word_count, body, ):
         self._title = title
         self._body = body
@@ -131,7 +135,7 @@ class MadLibs:
         """Take user input"""
         x = range(0, int(self._word_count))
         for n in x:
-            y = input(f"Enter choice **[{n + 1}]**: ")
+            y = input(f"Enter choice [{n + 1}]: ")
             self._user_input.append(y)
         return self._user_input
 
@@ -165,16 +169,15 @@ def main():
     # Body
     # Note: 'mad2' and 'mad3' are reserved for microservice
     # ----------------------------------------------------- #
-    mad1 = MadLibs \
-        ("The Magic Computers",
-         8,
-         '''
-    Today, every student has a computer small enough to fit into his **[noun]**. They can solve any math problem by 
-    simply pushing the computer's little **[plural noun]**. Computers can add, multiply, divide, and **[present tense  
-    verb]**. They can also **[present tense verb]** better than a human. Some computers are **[part of body (plural)]**.  
-    Others have a/an **[adjective]** screen that shows all kinds of **[plural noun]** and **[adjective]** figures.
-    '''
-         )
+    mad1 = MadLibs(
+        "The Magic Computers",
+        8,
+        "Today, every student has a computer small enough to fit into his [noun]. They can solve any math problem\n"
+        "by simply pushing the computer's little [plural noun]. Computers can add, multiply, divide, and [present\n"
+        "tense verb]. They can also [present tense verb] better than a human. Some computers are [part of body\n"
+        "(plural)]. Others have a/an [adjective] screen that shows all kinds of [plural noun] and [adjective]\n"
+        "figures.\n"
+    )
 
     # ----------------- #
     # Program operation
