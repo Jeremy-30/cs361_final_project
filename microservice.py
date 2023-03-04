@@ -27,8 +27,8 @@ def main():
         if read_line == "3":
             write_mad3 = open("story.txt", "w")
             print(f"Serving story: 3")
-            mad3 = "Art Class~8~Today in Art Class we went outside to draw pictures of trees, flowers\n" \
-                   "and [plural noun]. I decided to draw a [adjective] oak tree. First, I drew the trunk\n" \
+            mad3 = "Art Class~8~Today in Art Class we went outside to draw pictures of trees, flowers and\n" \
+                   "[plural noun]. I decided to draw a [adjective] oak tree. First, I drew the trunk\n" \
                    "and then I added the [plural noun]. I colored the trunk [color] and the leaves\n" \
                    "[color]. There was a [noun] in the tree so I drew that too. It had [adjective] red\n" \
                    "feathers. Soon, the teacher came to [verb] my picture.\n"
